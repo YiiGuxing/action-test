@@ -10,7 +10,7 @@ permissions:
 jobs:
 
   close:
-    name: Close Issue
+    name: Comment And Close Issue
     runs-on: ubuntu-latest
     steps:
 
