@@ -29,7 +29,7 @@
           "requires": 1,
           "conditions": [
             {
-              "type": "titleMatches",
+              "type": "descriptionMatches",
               "pattern": "java\\.lang\\.ClassCastException: class (?<class>cn\\.yiiguxing\\.plugin\\.translate\\..+) cannot be cast to class \\k<class>"
             }
           ]
