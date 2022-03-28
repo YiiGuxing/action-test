@@ -20,19 +20,3 @@ jobs:
         uses: IvanFon/super-labeler-action@v1
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-
-  close:
-    name: Close Issue If Needed
-    runs-on: ubuntu-latest
-    needs: label
-    steps:
-
-      - name: Close Issue
-        uses: actions/stale@v3.0.14
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          days-before-stale: 0
-          days-before-close: 0
-          stale-issue-label: ''
-          only-issue-labels: "not plugin's bug"
-          stale-issue-message: "This auto-generated issue has been automatically closed because it is not an issue for this project. If you think there are something really wrong, please reply this issue. Thanks for your cooperation."
