@@ -1,0 +1,29 @@
+{
+    "labels": {
+        "auto generated report 🤖": {
+            "name": "auto generated report 🤖",
+            "colour": "#e0e0e0",
+            "description": "auto generated report"
+        },
+        "not plugin's bug": {
+            "name": "not plugin's bug",
+            "colour": "#e0e0e0",
+            "description": "not plugin's bug"
+        }
+    },
+    "issue": {
+        "auto generated report 🤖": {
+            "requires": 2,
+            "conditions": [
+                {
+                    "type": "titleMatches",
+                    "pattern": "^\\[Auto Generated].+"
+                },
+                {
+                    "type": "descriptionMatches",
+                    "pattern": "\\s*:warning:_`\\[Auto Generated Report]-=[0-9A-F]{32}=-`_"
+                }
+            ]
+        }
+    }
+}

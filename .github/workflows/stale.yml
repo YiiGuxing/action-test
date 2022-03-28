@@ -9,15 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - name: Fetch Sources
+        uses: actions/checkout@v3
+
       - name: Label
-        uses: Naturalclar/issue-action@v2.0.2
+        uses: IvanFon/super-labeler-action@v1
         with:
-          title-or-body: "title"
-          parameters: | 
-            [
-              {"keywords": ["a"], "labels": ["a 🤖"]},
-              {"keywords": ["aa"], "labels": ["a 🦾"]}
-            ]
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
       - name: Close
