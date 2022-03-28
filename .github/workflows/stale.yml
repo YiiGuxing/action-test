@@ -16,7 +16,7 @@ jobs:
           parameters: | 
             [
               {"keywords": ["a"], "labels": ["a 🤖"]},
-              {"keywords": ["a-"], "labels": ["a 🦾"]}
+              {"keywords": ["aa"], "labels": ["a 🦾"]}
             ]
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
