@@ -1,27 +1,59 @@
 {
-    "labels": {},
-    "issue": {
-        "auto generated report 🤖": {
-            "requires": 2,
-            "conditions": [
-                {
-                    "type": "titleMatches",
-                    "pattern": "^\\[Auto Generated].+"
-                },
-                {
-                    "type": "descriptionMatches",
-                    "pattern": ":warning:_`\\[Auto Generated Report]-=[0-9A-F]{32}=-`_"
-                }
-            ]
+    "labels": {
+        "auto-generated-report": {
+            "name": "auto generated report 🤖",
+            "colour": "#5C6BC0",
+            "description": "auto generated report"
         },
-        "not plugin's bug": {
-            "requires": 1,
-            "conditions": [
-                {
-                    "type": "descriptionMatches",
-                    "pattern": "java\\.lang\\.ClassCastException: class (?<class>cn\\.yiiguxing\\.plugin\\.translate\\.\\S+) cannot be cast to class \\k<class> "
-                }
-            ]
+        "not-plugins-bug": {
+            "name": "not plugin's bug",
+            "colour": "#1A322A",
+            "description": "not plugin's bug"
+        },
+        "dynamic-plugin": {
+            "name": "dynamic plugin :electric_plug:",
+            "colour": "#E0E0E0"
         }
-    }
+    },
+    "issue": {
+        "auto-generated-report": {
+          "requires": 2,
+          "conditions": [
+            {
+              "type": "titleMatches",
+              "pattern": "^\\[Auto Generated].+"
+            },
+            {
+              "type": "descriptionMatches",
+              "pattern": ":warning:_`\\[Auto Generated Report]-=[0-9A-F]{32}=-`_"
+            }
+          ]
+        },
+        "not-plugins-bug": {
+          "requires": 1,
+          "conditions": [
+            {
+              "type": "descriptionMatches",
+              "pattern": "java\\.lang\\.ClassCastException: class (?<class>cn\\.yiiguxing\\.plugin\\.translate\\.\\S+) cannot be cast to class \\k<class> "
+            },
+            {
+              "type": "descriptionMatches",
+              "pattern": "java\\.lang\\.ClassCastException: class cn\\.yiiguxing\\.plugin\\.translate\\.service\\.TranslationUIManager\\$AppService cannot be cast to class cn\\.yiiguxing\\.plugin\\.translate\\.service\\.TranslationUIManager "
+            }
+          ]
+        },
+        "dynamic-plugin": {
+          "requires": 1,
+          "conditions": [
+            {
+              "type": "descriptionMatches",
+              "pattern": "java\\.lang\\.ClassCastException: class (?<class>cn\\.yiiguxing\\.plugin\\.translate\\.\\S+) cannot be cast to class \\k<class> "
+            },
+            {
+              "type": "descriptionMatches",
+              "pattern": "java\\.lang\\.ClassCastException: class cn\\.yiiguxing\\.plugin\\.translate\\.service\\.TranslationUIManager\\$AppService cannot be cast to class cn\\.yiiguxing\\.plugin\\.translate\\.service\\.TranslationUIManager "
+            }
+          ]
+        }
+      }
 }
