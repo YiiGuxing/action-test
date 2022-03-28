@@ -41,6 +41,7 @@ jobs:
 
   close:
     name: Close Issue
+    if: github.event.action == 'labeled'
     runs-on: ubuntu-latest
     steps:
 
