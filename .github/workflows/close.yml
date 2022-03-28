@@ -15,6 +15,9 @@ jobs:
     steps:
 
       - name: Close Issue
-        shell: bash
-        run: |
-          echo "${{github.event}}"
+        if: contains(github.event.issue.labels.*.name, 'a 🤖')
+        uses: peter-evans/close-issue@v2
+        with:
+          comment: |
+            This auto-generated issue has been automatically closed because it is not an issue for this project.
+            If you think there are something really wrong, please reply this issue. Thanks for your cooperation.
