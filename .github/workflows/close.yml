@@ -1,4 +1,4 @@
-name: Close Issues
+name: Comment And Close Issues
 
 on:
   issues:
@@ -14,10 +14,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - name: Comment
+        if: contains(github.event.issue.labels.*.name, 'dynamic plugin :electric_plug:')
+        uses: ben-z/actions-comment-on-issue@1.0.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          message: >
+            This problem is caused by the dynamic loading of the plugin, you need to restart the IDE to solve it.
+
       - name: Close Issue
-        if: contains(github.event.issue.labels.*.name, 'a 🤖')
+        if: contains(github.event.issue.labels.*.name, 'not plugin's bug')
         uses: peter-evans/close-issue@v2
         with:
-          comment: |
-            This auto-generated issue has been automatically closed because it is not an issue for this project.
+          comment: >
+            This issue has been automatically closed because it is not an issue for this project.
             If you think there are something really wrong, please reply this issue. Thanks for your cooperation.
