@@ -15,8 +15,8 @@ jobs:
           title-or-body: "title"
           parameters: | 
             [
-              {"keywords": ["a"], "labels": ["🤖"]},
-              {"keywords": ["a-"], "labels": ["🦾"]}
+              {"keywords": ["a"], "labels": ["a 🤖"]},
+              {"keywords": ["a-"], "labels": ["a 🦾"]}
             ]
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
@@ -26,5 +26,5 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           days-before-stale: 0
           days-before-close: 0
-          only-labels: "🦾"
+          only-labels: "a 🦾"
           stale-issue-message: "This auto-generated issue has been automatically closed because it is not an issue for this project. If you think there are something really wrong, please reply this issue. Thanks for your cooperation."
