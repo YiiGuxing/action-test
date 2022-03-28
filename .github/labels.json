@@ -19,10 +19,6 @@
           {
             "type": "descriptionMatches",
             "pattern": "java\\.lang\\.ClassCastException: class (?<class>cn\\.yiiguxing\\.plugin\\.translate\\.\\S+) cannot be cast to class \\k<class> "
-          },
-          {
-            "type": "descriptionMatches",
-            "pattern": "java\\.lang\\.ClassCastException: class cn\\.yiiguxing\\.plugin\\.translate\\.service\\.TranslationUIManager\\$AppService cannot be cast to class cn\\.yiiguxing\\.plugin\\.translate\\.service\\.TranslationUIManager "
           }
         ]
       }
