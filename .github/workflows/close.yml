@@ -23,7 +23,7 @@ jobs:
             This problem is caused by the dynamic loading of the plugin, you need to restart the IDE to solve it.
 
       - name: Close Issue
-        if: contains(github.event.issue.labels.*.name, 'not plugin's bug')
+        if: contains(github.event.issue.labels.*.name, "not plugin's bug")
         uses: peter-evans/close-issue@v2
         with:
           comment: >
