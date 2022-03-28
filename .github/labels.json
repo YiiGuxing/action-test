@@ -1,43 +1,44 @@
 {
+    "labels": {},
     "issue": {
-      "auto generated report 🤖": {
-        "requires": 2,
-        "conditions": [
-          {
-            "type": "titleMatches",
-            "pattern": "^\\[Auto Generated].+"
-          },
-          {
-            "type": "descriptionMatches",
-            "pattern": ":warning:_`\\[Auto Generated Report]-=[0-9A-F]{32}=-`_"
-          }
-        ]
-      },
-      "not plugin's bug": {
-        "requires": 1,
-        "conditions": [
-          {
-            "type": "descriptionMatches",
-            "pattern": "java\\.lang\\.ClassCastException: class (?<class>cn\\.yiiguxing\\.plugin\\.translate\\.\\S+) cannot be cast to class \\k<class> "
-          },
-          {
-            "type": "descriptionMatches",
-            "pattern": "java\\.lang\\.ClassCastException: class cn\\.yiiguxing\\.plugin\\.translate\\.service\\.TranslationUIManager\\$AppService cannot be cast to class cn\\.yiiguxing\\.plugin\\.translate\\.service\\.TranslationUIManager "
-          }
-        ]
-      },
-      "dynamic plugin :electric_plug:": {
-        "requires": 1,
-        "conditions": [
-          {
-            "type": "descriptionMatches",
-            "pattern": "java\\.lang\\.ClassCastException: class (?<class>cn\\.yiiguxing\\.plugin\\.translate\\.\\S+) cannot be cast to class \\k<class> "
-          },
-          {
-            "type": "descriptionMatches",
-            "pattern": "java\\.lang\\.ClassCastException: class cn\\.yiiguxing\\.plugin\\.translate\\.service\\.TranslationUIManager\\$AppService cannot be cast to class cn\\.yiiguxing\\.plugin\\.translate\\.service\\.TranslationUIManager "
-          }
-        ]
-      }
+        "auto generated report 🤖": {
+            "requires": 2,
+            "conditions": [
+                {
+                    "type": "titleMatches",
+                    "pattern": "^\\[Auto Generated].+"
+                },
+                {
+                    "type": "descriptionMatches",
+                    "pattern": ":warning:_`\\[Auto Generated Report]-=[0-9A-F]{32}=-`_"
+                }
+            ]
+        },
+        "not plugin's bug": {
+            "requires": 1,
+            "conditions": [
+                {
+                    "type": "descriptionMatches",
+                    "pattern": "java\\.lang\\.ClassCastException: class (?<class>cn\\.yiiguxing\\.plugin\\.translate\\.\\S+) cannot be cast to class \\k<class> "
+                },
+                {
+                    "type": "descriptionMatches",
+                    "pattern": "java\\.lang\\.ClassCastException: class cn\\.yiiguxing\\.plugin\\.translate\\.service\\.TranslationUIManager\\$AppService cannot be cast to class cn\\.yiiguxing\\.plugin\\.translate\\.service\\.TranslationUIManager "
+                }
+            ]
+        },
+        "dynamic plugin :electric_plug:": {
+            "requires": 1,
+            "conditions": [
+                {
+                    "type": "descriptionMatches",
+                    "pattern": "java\\.lang\\.ClassCastException: class (?<class>cn\\.yiiguxing\\.plugin\\.translate\\.\\S+) cannot be cast to class \\k<class> "
+                },
+                {
+                    "type": "descriptionMatches",
+                    "pattern": "java\\.lang\\.ClassCastException: class cn\\.yiiguxing\\.plugin\\.translate\\.service\\.TranslationUIManager\\$AppService cannot be cast to class cn\\.yiiguxing\\.plugin\\.translate\\.service\\.TranslationUIManager "
+                }
+            ]
+        }
     }
-  }
+}
