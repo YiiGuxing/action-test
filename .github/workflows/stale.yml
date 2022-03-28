@@ -34,4 +34,4 @@ jobs:
           days-before-stale: 0
           days-before-close: 0
           only-labels: "not plugin's bug"
-          close-issue-message: "This auto-generated issue has been automatically closed because it is not an issue for this project. If you think there are something really wrong, please reply this issue. Thanks for your cooperation."
+          stale-issue-message: "This auto-generated issue has been automatically closed because it is not an issue for this project. If you think there are something really wrong, please reply this issue. Thanks for your cooperation."
