@@ -30,7 +30,7 @@
           "conditions": [
             {
               "type": "descriptionMatches",
-              "pattern": "java\\.lang\\.ClassCastException: class (?<class>cn\\.yiiguxing\\.plugin\\.translate\\..+) cannot be cast to class \\k<class>"
+              "pattern": "java\\.lang\\.ClassCastException: class (?<class>cn\\.yiiguxing\\.plugin\\.translate\\..+) cannot be cast to class \\k<class> "
             }
           ]
         }
