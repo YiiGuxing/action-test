@@ -21,9 +21,18 @@
                 },
                 {
                     "type": "descriptionMatches",
-                    "pattern": "\\s*:warning:_`\\[Auto Generated Report]-=[0-9A-F]{32}=-`_"
+                    "pattern": ":warning:_`\\[Auto Generated Report]-=[0-9A-F]{32}=-`_"
                 }
             ]
+        },
+        "not plugin's bug": {
+          "requires": 1,
+          "conditions": [
+            {
+              "type": "titleMatches",
+              "pattern": "java\\.lang\\.ClassCastException: class (?<class>cn\\.yiiguxing\\.plugin\\.translate\\..+) cannot be cast to class \\k<class>"
+            }
+          ]
         }
     }
 }
