@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Label Issue
-        uses: Videndum/super-labeler-action@1.1.1
+        uses: Videndum/super-labeler-action@1.1.0
         with:
           github-token: "${{ secrets.ISSUE_LABEL_TOKEN }}"
 
