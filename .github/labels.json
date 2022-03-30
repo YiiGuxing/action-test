@@ -45,6 +45,10 @@
         {
           "type": "descriptionMatches",
           "pattern": "Conflicting component name 'Settings': .+ \\(componentManager=Application \\(containerState=COMPONENT_CREATED\\) \\)"
+        },
+        {
+          "type": "descriptionMatches",
+          "pattern": "com\\.intellij\\.diagnostic\\.PluginException: Key (?<id>cn\\.yiiguxing\\.plugin\\.translate)\\.\\S+ duplicated \\[Plugin: \\k<id>]"
         }
       ]
     },
