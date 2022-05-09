@@ -56,7 +56,7 @@
         },
         {
           "type": "descriptionMatches",
-          "pattern": "TranslatingDocumentationProvider$Companion\\.nullIfError\\(TranslatingDocumentationProvider\\.kt:\\d+\\)"
+          "pattern": "TranslatingDocumentationProvider\\$Companion\\.nullIfError\\(TranslatingDocumentationProvider\\.kt:\\d+\\)"
         }
       ]
     },
