@@ -49,6 +49,10 @@
         {
           "type": "descriptionMatches",
           "pattern": "com\\.intellij\\.diagnostic\\.PluginException: Key (?<id>cn\\.yiiguxing\\.plugin\\.translate)\\.\\S+ duplicated \\[Plugin: \\k<id>]"
+        },
+        {
+          "type": "titleMatches",
+          "pattern": "find: An invalid record was encountered\\. \\(-67701\\)"
         }
       ]
     },
