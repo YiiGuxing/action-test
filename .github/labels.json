@@ -53,6 +53,10 @@
         {
           "type": "titleMatches",
           "pattern": "find: An invalid record was encountered\\. \\(-67701\\)"
+        },
+        {
+          "type": "descriptionMatches",
+          "pattern": "TranslatingDocumentationProvider$Companion\\.nullIfError\\(TranslatingDocumentationProvider\\.kt:\\d+\\)"
         }
       ]
     },
