@@ -53,7 +53,7 @@
         },
         {
           "type": "descriptionMatches",
-          "pattern": "## Stack Trace\\n```\\n(.+)\\n```"
+          "pattern": "## Stack Trace"
         }
       ]
     },
