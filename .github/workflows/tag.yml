@@ -4,8 +4,10 @@
 name: Tag Test
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - 'tag-*'
+      tags:
+        - 'v*'
 
 jobs:
 
