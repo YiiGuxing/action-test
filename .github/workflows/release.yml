@@ -5,7 +5,7 @@ on:
 
 jobs:
 
-  push:
+  release:
     name: Release
     runs-on: ubuntu-latest
     steps:
