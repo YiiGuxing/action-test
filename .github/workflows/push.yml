@@ -1,6 +1,9 @@
 name: Push Test
 on:
   push:
+    branches:
+      - main
+      - 'rel/*'
 
 jobs:
 
