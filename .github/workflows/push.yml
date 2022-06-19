@@ -1,9 +1,11 @@
 name: Push Test
+
 on:
   push:
 
 jobs:
-  push:
+
+  push-test:
   name: Push
   runs-on: ubuntu-latest
 
