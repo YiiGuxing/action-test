@@ -2,9 +2,6 @@ name: Release Test
 on:
   release:
     types: [released]
-    branches:
-      - main
-      - 'rel-test'
 
 jobs:
 
@@ -21,7 +18,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "${{ github.ref }}"
+          echo "${{ toJSON(github) }}"
           echo "${{ github.ref != 'refs/heads/main' }}"
           gh api repos/{owner}/{repo}/releases \
             --jq '.[] | select(.tag_name == "${{ github.event.release.tag_name }}") | .id' \
