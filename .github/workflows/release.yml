@@ -18,8 +18,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "${{ toJSON(github) }}"
-          echo "${{ github.ref != 'refs/heads/main' }}"
+          echo "${{ github.release.target_commitish }}"
+          echo "${{ github.release.target_commitish != 'main' }}"
           gh api repos/{owner}/{repo}/releases \
             --jq '.[] | select(.tag_name == "${{ github.event.release.tag_name }}") | .id' \
             | xargs -I '{}' gh api -X DELETE repos/{owner}/{repo}/releases/{}
