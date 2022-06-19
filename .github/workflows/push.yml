@@ -1,0 +1,13 @@
+name: Push Test
+on:
+  push:
+
+jobs:
+  push:
+  name: Push
+  runs-on: ubuntu-latest
+
+    steps:
+      - name: Event
+          run: |
+            echo "${{github.ref}}"

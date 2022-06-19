@@ -11,7 +11,7 @@ on:
 
 jobs:
 
-  release:
+  tag:
     name: Tag
     runs-on: ubuntu-latest
     steps:
