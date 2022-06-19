@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - 'rel/*'
 
 jobs:
 
@@ -20,3 +21,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "${{ github.ref }}"
+          echo "${{ github.ref_name }}"
