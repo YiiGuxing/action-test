@@ -1,15 +1,14 @@
 name: Push Test
-
 on:
   push:
 
 jobs:
 
-  push-test:
-  name: Push
-  runs-on: ubuntu-latest
-
+  push:
+    name: Push
+    runs-on: ubuntu-latest
     steps:
+
       - name: Event
-          run: |
-            echo "${{github.ref}}"
+        run: |
+          echo "${{github.ref}}"
