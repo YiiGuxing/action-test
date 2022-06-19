@@ -11,4 +11,4 @@ jobs:
 
       - name: Event
         run: |
-          echo "${{github.ref}}"
+          gh api repos/YiiGuxing/Translation/releases --jq '.[]'
