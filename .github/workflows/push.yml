@@ -13,4 +13,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api reposYiiGuxing/TranslationPlugin/releases --jq '.[]'
+          gh api repos/YiiGuxing/TranslationPlugin/releases --jq '.[]'
