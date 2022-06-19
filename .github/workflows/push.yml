@@ -13,4 +13,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api repos/YiiGuxing/TranslationPlugin/releases --jq '.[]'
+          gh api repos/{owner}/{repo}/releases \
+            --jq ".[] | select(.tag_name == \"${{ github.event.release.tag_name }}\") | .id"
