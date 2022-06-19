@@ -2,6 +2,9 @@ name: Release Test
 on:
   release:
     types: [released]
+    branches:
+      - main
+      - 'rel-test'
 
 jobs:
 
