@@ -5,6 +5,9 @@ on:
       - main
       - 'rel/*'
 
+env:
+  MY_ENV: env_test
+
 jobs:
 
   push:
@@ -20,5 +23,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          echo "$MY_ENV"
           echo "${{ github.ref }}"
           echo "${{ github.ref_name }}"
