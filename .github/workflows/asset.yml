@@ -1,0 +1,23 @@
+name: Asset Test
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  asset:
+    name: Asset
+    runs-on: ubuntu-latest
+    steps:
+      # Check out current repository
+      - name: Fetch Sources
+        uses: actions/checkout@v3
+
+      - name: Upload Release Asset
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          fname="$RANDOM.txt"
+          cat /proc/sys/kernel/random/uuid > "$fname"
+          gh release upload v0.0.14 "./${fname}"
