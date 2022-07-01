@@ -20,4 +20,4 @@ jobs:
         run: |
           fname="$RANDOM.txt"
           cat /proc/sys/kernel/random/uuid > "$fname"
-          gh release upload v0.0.14 "./${fname}"
+        # gh release upload v0.0.14 "./${fname}"
