@@ -51,8 +51,9 @@ jobs:
 
       - name: Close
         if: github.event.label.name == 'not plugin''s bug'
-        uses: peter-evans/close-issue@v2
+        uses: YiiGuxing/close-issue2@v2.1
         with:
+          close-reason: not_planned
           comment: >
             This issue has been automatically closed because it is not an issue for this project.
             If you think there are something really wrong, please reply this issue. Thanks for your cooperation.
