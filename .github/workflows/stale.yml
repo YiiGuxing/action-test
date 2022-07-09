@@ -55,7 +55,7 @@ jobs:
         with:
           close-reason: not_planned
 
-      - name: Close
+      - name: Close not plugin''s bug
         if: github.event.label.name == 'not plugin''s bug'
         uses: YiiGuxing/close-issue@v2.1.0
         with:
