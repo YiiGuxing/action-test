@@ -47,7 +47,7 @@ jobs:
       
       - name: Close Fixed
         if: github.event.label.name == 'fixed :hammer:'
-        uses: peter-evans/close-issue@v2
+        uses: YiiGuxing/close-issue2@v2.1
 
       - name: Close
         if: github.event.label.name == 'not plugin''s bug'
