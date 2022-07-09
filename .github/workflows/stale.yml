@@ -49,6 +49,12 @@ jobs:
         if: github.event.label.name == 'fixed :hammer:'
         uses: YiiGuxing/close-issue@v2.1.0
 
+      - name: Close duplicate
+        if: github.event.label.name == 'duplicate'
+        uses: YiiGuxing/close-issue@v2.1
+        with:
+          close-reason: not_planned
+
       - name: Close
         if: github.event.label.name == 'not plugin''s bug'
         uses: YiiGuxing/close-issue@v2.1.0
