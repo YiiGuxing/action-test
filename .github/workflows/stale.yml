@@ -47,11 +47,11 @@ jobs:
       
       - name: Close Fixed
         if: github.event.label.name == 'fixed :hammer:'
-        uses: YiiGuxing/close-issue@v2.1
+        uses: YiiGuxing/close-issue@v2.1.0
 
       - name: Close
         if: github.event.label.name == 'not plugin''s bug'
-        uses: YiiGuxing/close-issue@v2.1
+        uses: YiiGuxing/close-issue@v2.1.0
         with:
           close-reason: not_planned
           comment: >
