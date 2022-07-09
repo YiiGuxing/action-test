@@ -51,7 +51,7 @@ jobs:
 
       - name: Close duplicate
         if: github.event.label.name == 'duplicate'
-        uses: YiiGuxing/close-issue@v2.1
+        uses: YiiGuxing/close-issue@v2.1.0
         with:
           close-reason: not_planned
 
