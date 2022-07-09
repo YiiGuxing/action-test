@@ -25,4 +25,4 @@ jobs:
         run: |
           echo "$MY_ENV"
           echo "${{ github.ref }}"
-          echo "${{ github.ref_name }}"
+          echo "${{ github.ref_name == 'main' ? 'aaa' : 'bbb' }}"
