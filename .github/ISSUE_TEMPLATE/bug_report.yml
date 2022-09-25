@@ -1,61 +1,61 @@
-name: "🐛 Bug报告"
-description: 报告错误或异常行为
+name: "🐛 Bug report"
+description: Report an issue with massCode
 title: "[Bug]: "
 labels: ["bug :bug:"]
 body:
   - type: markdown
     attributes:
       value: |
-        感谢您花时间填写这份Bug报告！
+        Thanks for taking the time to fill out this bug report!
   - type: checkboxes
     id: validation
     attributes:
-      label: ✅ 检查清单
-      description: 在提交报告之前，请确保您已执行以下操作：
+      label: ✅ Preflight Checklist
+      description: "Before submitting the issue, please make sure you do the following:"
       options:
-        - label: 请检查是否已经存在[相同的报告](https://github.com/YiiGuxing/TranslationPlugin/issues)，以避免创建重复的报告。
+        - label: Please make sure to [search for existing issues](https://github.com/YiiGuxing/TranslationPlugin/issues) before filing a new one.
           required: true
-        - label: 请确保您要提交的是一个错误报告，而不是一个提问或者建议。如果您有任何疑问或任何建议，请使用 [GitHub Discussions](https://github.com/YiiGuxing/TranslationPlugin/discussions)。
+        - label: Check that this is a concrete bug. For Q&A open a [GitHub Discussions](https://github.com/YiiGuxing/TranslationPlugin/discussions).
           required: true
   - type: textarea
     id: description
     attributes:
-      label: 📝 问题描述
-      description: 请清晰简洁地描述是什么样的问题，重现问题的步骤，发生了什么事，以及您期望的行为应该是什么。如果可以，请添加屏幕截图以帮助解释您的问题。
+      label: 📝 Issue Description
+      description: "Please describe the problem in detail. Be sure to include: steps to reproduce the problem, what happened, what you think the correct behavior should be. If applicable, add screenshots to help explain your problem."
       placeholder: |
-        例如：
-        1. 打开翻译窗口
-        2. 点击翻译按钮
-        3. 翻译窗口消失
-        4. 期望的行为是翻译窗口不消失
+        e.g.
+        1. Open the translation dialog.
+        2. Click the translate button.
+        3. The translation dialog disappears.
+        4. The expected behavior is that the translation dialog will not disappear.
     validations:
       required: true
   - type: input
     id: version
     attributes:
-      label: 🏷 插件版本
-      description: 您正在运行的插件是哪个版本？
-      placeholder: 例如：3.4.0、3.4.0+222.2
+      label: 🏷 Plugin Version
+      description: What version of translation plugin are you running?
+      placeholder: e.g. 3.4.0, 3.4.0+222.2
     validations:
       required: true
   - type: dropdown
     id: engines
     attributes:
-      label: 🔁 翻译引擎
-      description: 您使用的是哪些翻译引擎？
+      label: 🔁 Translation Engine(s)
+      description: What translation engines are you using?
       multiple: true
       options:
-        - 谷歌翻译
-        - 有道翻译
-        - 百度翻译
-        - 阿里翻译
+        - Google Translate
+        - Youdao Translate
+        - Baidu Translate
+        - Alibaba Translate
     validations:
       required: true
   - type: textarea
     id: runtime_env
     attributes:
-      label: 💻 IDE及运行环境
-      description: 请提供您正在使用的 IDE 的详细信息，以及您的运行环境信息（操作系统、JRE版本等）。快速获取所有信息：IDE主菜单 > Help > About > 点击“Copy”按钮。
+      label: 💻 IDE and Operating Environment
+      description: What version of OS and IDE are you using? (IDE main menu > Help > About > Click "Copy" button to copy to clipboard)
       placeholder: |
         例如：
         IntelliJ IDEA 2022.2.2 Preview (Ultimate Edition)
@@ -70,6 +70,6 @@ body:
   - type: textarea
     id: stacktrace
     attributes:
-      label: 📋 堆栈跟踪
-      description: 如果插件崩溃，且您能获取堆栈跟踪信息，请将其粘贴到此处。如果您不知道如何获取堆栈跟踪信息，请忽略此项。
+      label: 📋 Stacktrace
+      description: If the plugin crashes and you can get the stack trace, paste it here. If you don't know how to get the stack trace, ignore this.
       render: plain text
