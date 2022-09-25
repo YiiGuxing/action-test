@@ -1,5 +1,5 @@
 name: "🐛 Bug report"
-description: Report an issue with massCode
+description: Report errors or unexpected behavior
 title: "[Bug]: "
 labels: ["bug :bug:"]
 body:
@@ -57,7 +57,7 @@ body:
       label: 💻 IDE and Operating Environment
       description: What version of OS and IDE are you using? (IDE main menu > Help > About > Click "Copy" button to copy to clipboard)
       placeholder: |
-        例如：
+        e.g.
         IntelliJ IDEA 2022.2.2 Preview (Ultimate Edition)
         Build #IU-222.4167.9, built on September 1, 2022
         Runtime version: 17.0.4+7-b469.53 amd64
