@@ -8,6 +8,7 @@ body:
       value: |
         请限制每个议题只包含一个需求或建议。
   - type: textarea
+    id: description
     attributes:
       label: 需求/建议描述
       placeholder: |
@@ -15,6 +16,7 @@ body:
     validations:
       required: true
   - type: textarea
+    id: solution
     attributes:
       label: 建议的解决方案
       placeholder: |
@@ -22,6 +24,7 @@ body:
     validations:
       required: true
   - type: textarea
+    id: additional
     attributes:
       label: 附加信息
       placeholder: |
