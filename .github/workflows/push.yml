@@ -4,6 +4,7 @@ on:
     branches:
       - main
       - 'rel/*'
+      - 'act'
 
 env:
   MY_ENV: env_test
