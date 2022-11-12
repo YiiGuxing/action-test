@@ -82,7 +82,7 @@
         },
         {
           "type": "descriptionMatches",
-          "pattern": "^((?!cn\\.yiiguxing\\.plugin\\.translate).)+cn\\.yiiguxing\\.plugin\\.translate\\.ui\\.settings\\.OptionsConfigurable\\$Companion\\.showSettingsDialog\\(OptionsConfigurable\\.kt:\\d+\\)"
+          "pattern": "/^((?!cn\\.yiiguxing\\.plugin\\.translate\\.).)+cn\\.yiiguxing\\.plugin\\.translate\\.ui\\.settings\\.OptionsConfigurable\\$Companion\\.showSettingsDialog\\(OptionsConfigurable\\.kt:\\d+\\)/gms"
         }
       ]
     },
