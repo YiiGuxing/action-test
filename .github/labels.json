@@ -82,7 +82,15 @@
         },
         {
           "type": "descriptionMatches",
-          "pattern": "/^```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+(at cn\\.yiiguxing\\.plugin\\.translate\\.ui\\.settings\\.OptionsConfigurable\\$Companion\\.showSettingsDialog\\(OptionsConfigurable\\.kt:\\d+\\)|at com\\.intellij\\.openapi\\.actionSystem\\.ActionManager\\.getInstance\\(ActionManager\\.java:\\d+\\))/gms"
+          "pattern": "/^```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at cn\\.yiiguxing\\.plugin\\.translate\\.ui\\.settings\\.OptionsConfigurable\\$Companion\\.showSettingsDialog\\(OptionsConfigurable\\.kt:\\d+\\)/gms"
+        },
+        {
+          "type": "descriptionMatches",
+          "pattern": "/^```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at com\\.intellij\\.openapi\\.actionSystem\\.ActionManager\\.getInstance\\(ActionManager\\.java:\\d+\\)/gms"
+        },
+        {
+          "type": "descriptionMatches",
+          "pattern": "/^```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at com\\.intellij\\.util\\.SVGLoader\\.loadFromClassResource(SVGLoader\\.java:\\d+\\)/gms"
         }
       ]
     },
