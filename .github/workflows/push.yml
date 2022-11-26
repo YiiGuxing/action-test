@@ -11,19 +11,35 @@ env:
 
 jobs:
 
-  push:
-    name: Push
+  push0:
+    name: Push 0
+    runs-on: ubuntu-latest
+    outputs:
+      k1: ${{ steps.e0.outputs.k1 }}
+      k2: ${{ steps.e0.outputs.k2 }}
+    steps:
+
+      - name: Event 0
+        id: e0
+        run: |
+          echo "k1=v1" >> $GITHUB_OUTPUT
+          echo "k2<<EOF" >> $GITHUB_OUTPUT
+          echo "v2.0" >> $GITHUB_OUTPUT
+          echo "v2.1" >> $GITHUB_OUTPUT
+          
+
+      - name: Event 1
+        run: |
+          echo "k1: ${{ steps.e0.outputs.k1 }}"
+          echo "k2: ${{ steps.e0.outputs.k2 }}"
+
+  push1:
+    name: Push 1
+    needs: push0
     runs-on: ubuntu-latest
     steps:
 
-      # Check out current repository
-      - name: Fetch Sources
-        uses: actions/checkout@v3
-
       - name: Event
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "$MY_ENV"
-          echo "${{ github.ref }}"
-          echo "${{ github.ref_name }}"
+          echo "k1: ${{ needs.push0.outputs.k1 }}"
+          echo "k2: ${{ needs.push0.outputs.k2 }}"
