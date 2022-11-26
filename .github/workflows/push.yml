@@ -23,9 +23,10 @@ jobs:
         id: e0
         run: |
           echo "k1=v1" >> $GITHUB_OUTPUT
-          echo "k2<<EOF" >> $GITHUB_OUTPUT
+          echo 'k2<<EOF' >> $GITHUB_OUTPUT
           echo "v2.0" >> $GITHUB_OUTPUT
           echo "v2.1" >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
           
 
       - name: Event 1
