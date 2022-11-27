@@ -9,7 +9,7 @@ plugins {
 
 
 group = "a.b.c"
-version = "101.0.4"
+version = "101.0.5"
 
 repositories {
     mavenCentral()
