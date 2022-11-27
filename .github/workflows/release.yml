@@ -65,8 +65,7 @@ jobs:
       - name: Patch Changelog
         if: steps.properties.outputs.pluginBuildMetadata == '' && steps.properties.outputs.changelog != ''
         run: |
-          ./gradlew patchChangelog \
-            --release-note="$(cat << 'EOM'
+          ./gradlew patchChangelog --release-note="$(cat << 'EOM'
           ${{ steps.properties.outputs.changelog }}
           EOM
           )"
