@@ -1,6 +1,8 @@
 # Translation Plugin Changelog
 
-## [Unreleased]
+## Unreleased
+
+## 101.0.7 - 2022-11-27
 - Added Microsoft translation engine. (Experimental)
 - Added DeepL translation engine.
 - Optimized documentation translation, added independent translation status for each documentation. (Experimental)
