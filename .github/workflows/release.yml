@@ -39,9 +39,9 @@ jobs:
         run: |
           chmod +x ./gradlew
           PROPERTIES="$(./gradlew properties --console=plain -q)"
-          PLUGIN_VERSION="$(echo "$PROPERTIES" | grep "^pluginVersion:" | cut -f2- -d ' ')"
-          PLUGIN_PRERELEASE_VERSION="$(echo "$PROPERTIES" | grep "^pluginPreReleaseVersion:" | cut -f2- -d ' ')"
-          PLUGIN_BUILD_METADATA="$(echo "$PROPERTIES" | grep "^pluginBuildMetadata:" | cut -f2- -d ' ')"
+          PLUGIN_VERSION="${{ github.event.release.tag_name }}"
+          PLUGIN_PRERELEASE_VERSION=""
+          PLUGIN_BUILD_METADATA=""
           CHANGELOG="$(cat << 'EOM' | sed -e "/## What's Changed/d" -e 's/^[[:space:]]*$//g' -e '/./,$!d'
           ${{ github.event.release.body }}
           EOM

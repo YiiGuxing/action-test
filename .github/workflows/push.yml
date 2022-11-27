@@ -48,14 +48,3 @@ jobs:
         run: |
           echo "k1: ${{ needs.push0.outputs.k1 }}"
           echo "k2: ${{ needs.push0.outputs.k2 }}"
-          BRANCH="${{ github.ref_name }}"
-          gh release create v1123 \
-            --target "$BRANCH" \
-            --draft \
-            --title "v${{ needs.push0.outputs.k2 }}" \
-            --notes "$(cat << 'EOM'
-          ## What's Changed
-          aaa%0Afff
-          ${{ needs.push0.outputs.k2 }}
-          EOM
-          )"
