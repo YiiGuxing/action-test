@@ -37,6 +37,7 @@ jobs:
         id: properties
         shell: bash
         run: |
+          chmod +x ./gradlew
           PROPERTIES="$(./gradlew properties --console=plain -q)"
           PLUGIN_VERSION="$(echo "$PROPERTIES" | grep "^pluginVersion:" | cut -f2- -d ' ')"
           PLUGIN_PRERELEASE_VERSION="$(echo "$PROPERTIES" | grep "^pluginPreReleaseVersion:" | cut -f2- -d ' ')"
