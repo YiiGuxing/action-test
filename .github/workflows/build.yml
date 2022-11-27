@@ -55,6 +55,7 @@ jobs:
           AUTO_SNAPSHOT_VERSION: false
         shell: bash
         run: |
+          chmod +x ./gradlew
           PROPERTIES="$(./gradlew properties --console=plain -q)"
           VERSION="$(echo "$PROPERTIES" | grep "^version:" | cut -f2- -d ' ')"
           CHANGELOG="$(./gradlew getChangelog --unreleased --no-header --no-links --console=plain -q)"
