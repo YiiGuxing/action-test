@@ -40,7 +40,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - name: Fetch Sources
+        uses: actions/checkout@v3
       - name: Event
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "k1: ${{ needs.push0.outputs.k1 }}"
           echo "k2: ${{ needs.push0.outputs.k2 }}"
+          BRANCH="${{ github.ref_name }}"
+          gh release create v1123 \
+            --target "$BRANCH" \
+            --draft \
+            --title "v${{ needs.push0.outputs.k2 }}" \
+            --notes "$(cat << 'EOM'
+          ## What's Changed
+
+          ${{ needs.push0.outputs.k2 }}
+          EOM
+          )"
