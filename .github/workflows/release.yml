@@ -52,15 +52,14 @@ jobs:
           echo "pluginBuildMetadata: $PLUGIN_BUILD_METADATA"
           echo "changelog:"
           echo "$CHANGELOG"
-          
-          CHANGELOG="${CHANGELOG//'%'/'%25'}"
-          CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
-          CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
 
           echo "pluginVersion=$PLUGIN_VERSION" >> $GITHUB_OUTPUT
           echo "pluginPrereleaseVersion=$PLUGIN_PRERELEASE_VERSION" >> $GITHUB_OUTPUT
           echo "pluginBuildMetadata=$PLUGIN_BUILD_METADATA" >> $GITHUB_OUTPUT
-          echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
+
+          echo 'changelog<<EOF' >> $GITHUB_OUTPUT
+          echo "$CHANGELOG" >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
 
       # Update Unreleased section with the current release note
       - name: Patch Changelog
@@ -68,7 +67,11 @@ jobs:
         env:
           CHANGELOG: ${{ steps.properties.outputs.changelog }}
         run: |
-          ./gradlew patchChangelog --release-note="$CHANGELOG"
+          ./gradlew patchChangelog \
+            --release-note="$(cat << 'EOM'
+              ${{ steps.properties.outputs.changelog }}
+              EOM
+              )"
 
       # Create pull request
       - name: Create Pull Request
