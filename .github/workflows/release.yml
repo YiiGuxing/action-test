@@ -37,7 +37,6 @@ jobs:
         id: properties
         shell: bash
         run: |
-          chmod +x ./gradlew
           PROPERTIES="$(./gradlew properties --console=plain -q)"
           PLUGIN_VERSION="${{ github.event.release.tag_name }}"
           PLUGIN_PRERELEASE_VERSION=""
