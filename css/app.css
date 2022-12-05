@@ -1,0 +1,114 @@
+body {
+    height: auto;
+    min-height: 100%;
+}
+
+.app-nav {
+    top: 0;
+    margin: 0;
+    position: sticky;
+    background-color: black;
+}
+
+.app-nav.no-badge {
+    margin-right: 0;
+}
+
+section.cover .cover-main {
+    padding: 3.5rem 0;
+}
+
+main {
+    width: auto;
+}
+
+.content {
+    position: static;
+    margin-left: 300px;
+    transition: margin-left .25s ease;
+}
+
+body.close .content {
+    margin-left: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        margin-left: 0;
+    }
+
+    .sidebar, .sidebar-toggle {
+        position: absolute;
+    }
+}
+
+.logo {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.idea-frame {
+    width: 600px;
+    padding: 0;
+    margin: 2.5rem auto 3rem;
+    border: 1px solid #00a0e1;
+    background-color: white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.2);
+    -webkit-transition: box-shadow 0.2s, border-color 0.2s;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.idea-frame:hover {
+    border: 1px solid #707070;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 8px 32px rgba(0, 0, 0, 0.24);
+}
+
+.idea-frame .frame-header {
+    height: 29px;
+    font-size: 14px;
+    line-height: 28px;
+    padding-left: 30px;
+    padding-bottom: 1px;
+    color: #3c3c3c;
+    text-align: start;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    background-image: url("../img/screenshot_frame_header.png");
+}
+
+.idea-frame .frame-footer {
+    height: 21px;
+    background-color: #f2f2f2;
+    background-image: url("../img/screenshot_frame_footer.png");
+}
+
+.translator-logo {
+    margin-bottom: 2rem;
+    padding: 0 20%;
+}
+
+.translator-logo img {
+    height: 30px;
+    margin-bottom: 1rem;
+}
+
+.translator-logo a + a {
+    margin-left: 2rem;
+}
+
+@media screen and (max-width: 1050px) {
+    .translator-logo {
+        padding: 0 10%;
+    }
+}
+
+.button--plugin-installation {
+    display: inline-block;
+    padding-left: 3px;
+    margin-top: 1rem;
+}
+
+.button--plugin-installation > iframe {
+    width: 248px;
+    height: 52px;
+    border: none;
+}

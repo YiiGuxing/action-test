@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TranslationPlugin by Yii.Guxing</title>
+    <link rel="icon" href="favicon.ico">
+    <meta name="description" content="IntelliJ-based IDEs/Android Studio 翻译插件，支持多语言互译、文档翻译、语音朗读...">
+    <meta name="keywords" content="IDEA Plugin,IDEA Translation Plugin,IDEA 插件,IDEA 翻译插件,插件">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<nav class="app-nav">
+    <a href="#/">EN</a>
+    <a href="#/zh-cn/">中文</a>
+</nav>
+<div id="app"></div>
+<script>
+    window.$docsify = {
+        coverpage: true,
+        loadSidebar: true,
+        relativePath: true,
+        plugins: [
+            function (hook, vm) {
+                Object.defineProperty(vm.config, "loadSidebar", {
+                    get: function () {
+                        var path = vm.route.path;
+                        return path === "/updates" || path.startsWith("/updates/") ? "_sidebar.md" : false;
+                    }
+                });
+
+                hook.mounted(function () {
+                    var nav = document.querySelector(".app-nav");
+                    var cover = document.querySelector(".cover");
+                    if (nav && cover && typeof cover.after === "function") {
+                        cover.after(nav);
+                    }
+                });
+            }
+        ]
+    }
+</script>
+<!-- Docsify v4 -->
+<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+</body>
+</html>
