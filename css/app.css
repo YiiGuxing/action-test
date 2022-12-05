@@ -6,6 +6,7 @@ body {
 .app-nav {
     top: 0;
     margin: 0;
+    height: 60px;
     position: sticky;
     background-color: black;
 }
@@ -20,6 +21,14 @@ section.cover .cover-main {
 
 main {
     width: auto;
+    min-height: 100vh;
+    margin-top: -60px;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    top: 60px;
 }
 
 .content {
