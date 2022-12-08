@@ -1,20 +1,29 @@
+<nav>
+
+[English](/en/)
+[日本語](/ja/)
+[한국어](/ko/)
+
+</nav>
+
 ![logo](img/logo.svg ':size=96x96 :class=logo')
 
-# Translation Plugin
+<h1>Translation Plugin</h1>
 
-> 一个 IntelliJ-based IDEs/Android Studio 翻译插件
+> 一个基于 IntelliJ IDEs/Android Studio 的翻译插件
 
-- 多语言互译
-- 语音朗读
-- 文档翻译
-
-[GitHub](https://github.com/YiiGuxing/TranslationPlugin)
-[Get Started](#quick-start)
+多翻译引擎，多语言互译，语音朗读，文档翻译，...
 
 [![最新版本][badge:last-version]][gh:last-release]
 [![收藏][badge:stars]][jb:translation-plugin]
 [![下载][badge:downloads]][jb:translation-plugin]
 
+<div class="buttons unselectable">
+
+[起 步](#quick-start)
+[![GITHUB](img/github.svg ':class=icon :size=2emx2em')GITHUB](https://github.com/YiiGuxing/TranslationPlugin ':class=github-button')
+
+</div>
 <div class="button--plugin-installation">
   <iframe src="https://plugins.jetbrains.com/embeddable/install/8579" frameborder="none"></iframe>
 </div>
@@ -38,7 +47,7 @@
 
 </div>
 
-<div>
+<div class="jetbrains-logo">
 
 [![JetBrains](img/jetbrains.svg)](https://www.jetbrains.com/?from=TranslationPlugin ':size=150x163 开发由 JetBrains 提供支持')
 

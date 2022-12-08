@@ -3,20 +3,143 @@ body {
     min-height: 100%;
 }
 
-.app-nav {
+.unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    /*noinspection CssUnknownProperty*/
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+section.cover {
+    background: linear-gradient(127deg, rgba(7, 195, 242, 0.9), rgba(7, 195, 242, 0) 70%),
+    linear-gradient(217deg, rgba(8, 124, 250, 0.9), rgba(8, 124, 250, 0) 70%),
+    linear-gradient(336deg, rgb(224, 64, 251, 0.7), rgba(183, 33, 255, 0) 70%) !important;
+}
+
+section.cover .cover-main {
+    padding: 60px 0 100px;
+}
+
+section.cover .cover-main nav {
+    position: absolute;
+    left: 0;
     top: 0;
+}
+
+section.cover .cover-main nav a + a {
+    margin-left: 0.5rem;
+}
+
+section.cover .buttons {
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+section.cover .buttons p {
+    margin: 0;
+}
+
+section.cover .buttons a {
+    margin: 1em 0.5em;
+    font-size: 1.05em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    min-width: 10em;
+    text-align: center;
+    line-height: normal;
+
+    padding: 0.75em 2em;
+    border-radius: 2em;
+    display: inline-block;
+    color: #fff;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+    border: 1px solid #2196F3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(110deg, rgba(33, 150, 243, 0.5), rgba(3, 169, 244, 0.3));
+}
+
+section.cover .buttons a:hover {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+}
+
+section.cover .buttons a.github-button {
+    position: relative;
+    text-indent: 1.4em;
+    background: linear-gradient(217deg, rgba(7, 195, 242, 0.9), rgba(7, 195, 242, 0) 70%),
+    linear-gradient(127deg, rgba(8, 124, 250, 0.9), rgba(8, 124, 250, 0) 70%),
+    linear-gradient(336deg, rgb(224, 64, 251, 0.7), rgba(183, 33, 255, 0) 70%);
+}
+
+section.cover .buttons a.github-button > .icon {
+    position: absolute;
+    height: 2em;
+    width: 2em;
+    left: 0.4em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0.7;
+    transition: opacity 0.25s ease;
+}
+
+section.cover .buttons a.github-button:hover > .icon {
+    opacity: 1;
+}
+
+.app-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    top: -1px;
+    padding: 0 1rem;
     margin: 0;
     height: 60px;
     position: sticky;
-    background-color: black;
+    background-color: #2c2c32;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    z-index: 32;
 }
 
 .app-nav.no-badge {
     margin-right: 0;
 }
 
-section.cover .cover-main {
-    padding: 3.5rem 0;
+.app-nav > .left {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.app-nav a {
+    margin: 0;
+    padding: 0 0.75rem;
+    height: 60px;
+    line-height: 60px;
+    color: #9d9d9d;
+    cursor: pointer;
+}
+
+.app-nav a:hover,
+.app-nav a.active {
+    color: white;
+}
+
+.app-nav .nav-logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.app-nav .nav-logo > img {
+    margin-right: 5px;
 }
 
 main {
@@ -52,7 +175,7 @@ body.close .content {
 }
 
 .logo {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .idea-frame {
@@ -91,7 +214,6 @@ body.close .content {
 }
 
 .translator-logo {
-    margin-bottom: 2rem;
     padding: 0 20%;
 }
 
@@ -108,6 +230,10 @@ body.close .content {
     .translator-logo {
         padding: 0 10%;
     }
+}
+
+.jetbrains-logo {
+    margin-top: 3rem;
 }
 
 .button--plugin-installation {
