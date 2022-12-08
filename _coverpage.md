@@ -14,9 +14,13 @@
 
 多翻译引擎，多语言互译，语音朗读，文档翻译，...
 
+<div class="badges">
+
 [![最新版本][badge:last-version]][gh:last-release]
 [![收藏][badge:stars]][jb:translation-plugin]
 [![下载][badge:downloads]][jb:translation-plugin]
+
+</div>
 
 <div class="buttons unselectable">
 
@@ -38,12 +42,12 @@
 
 <div class="translator-logo">
 
-[![微软翻译](img/microsoft_translator_logo.svg)](https://www.bing.com/translator '微软翻译')
-[![谷歌翻译](img/google_translate_logo.svg)](https://translate.google.com '谷歌翻译')
-[![DeepL翻译](img/deepl_translate_logo.svg)](https://www.deepl.com 'DeepL翻译')
-[![有道翻译](img/youdao_translate_logo.png)](https://ai.youdao.com '有道翻译')
-[![百度翻译](img/baidu_translate_logo.png)](https://fanyi-api.baidu.com '百度翻译')
-[![阿里翻译](img/ali_translate_logo.png)](https://translate.alibaba.com '阿里翻译')
+[![微软翻译](img/microsoft_translator_logo.svg ':size=252x30')](https://www.bing.com/translator '微软翻译')
+[![谷歌翻译](img/google_translate_logo.svg ':size=215x30')](https://translate.google.com '谷歌翻译')
+[![DeepL翻译](img/deepl_translate_logo.svg ':size=86x30')](https://www.deepl.com 'DeepL翻译')
+[![有道翻译](img/youdao_translate_logo.png ':size=149x30')](https://ai.youdao.com '有道翻译')
+[![百度翻译](img/baidu_translate_logo.png ':size=94x30')](https://fanyi-api.baidu.com '百度翻译')
+[![阿里翻译](img/ali_translate_logo.png ':size=124x30')](https://translate.alibaba.com '阿里翻译')
 
 </div>
 

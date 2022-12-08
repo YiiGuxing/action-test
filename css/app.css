@@ -95,7 +95,7 @@ section.cover .buttons a.github-button:hover > .icon {
     justify-content: space-between;
     align-items: center;
     color: white;
-    top: -1px;
+    top: 0;
     padding: 0 1rem;
     margin: 0;
     height: 60px;
@@ -176,6 +176,18 @@ body.close .content {
 
 .logo {
     background: rgba(0, 0, 0, 0.5);
+}
+
+section.cover .badges {
+    height: 1.8rem;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+}
+
+section.cover .badges > p {
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 .idea-frame {
