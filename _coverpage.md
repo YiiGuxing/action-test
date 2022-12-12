@@ -24,7 +24,7 @@
 
 <div class="buttons unselectable">
 
-[起 步](#quick-start)
+[起 步](#get-started ':id=get-started-button')
 [![GITHUB](img/github.svg ':class=icon :size=2emx2em')GITHUB](https://github.com/YiiGuxing/TranslationPlugin ':class=github-button')
 
 </div>

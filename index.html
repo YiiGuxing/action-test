@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>TranslationPlugin by Yii.Guxing</title>
+    <title>TranslationPlugin ❤️ Yii.Guxing</title>
     <link rel="icon" href="favicon.ico">
     <meta name="description" content="IntelliJ-based IDEs/Android Studio 翻译插件，支持多语言互译、文档翻译、语音朗读...">
     <meta name="keywords" content="IDEA Plugin,IDEA Translation Plugin,IDEA 插件,IDEA 翻译插件,插件">
@@ -11,61 +11,188 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-<nav class="app-nav">
+<nav class="app-nav unselectable">
     <div class="left">
-        <a id="home" class="nav-logo">
+        <a id="nav-home" class="nav-logo">
             <img src="img/logo.svg" width="40" height="40" alt="logo">
-            <span>Translation Plugin</span>
+            <span>TranslationPlugin</span>
         </a>
-        <a id="docs">文档</a>
-        <a id="updates">更新</a>
-        <a id="d">支持与赞助</a>
+        <a id="nav-docs" data-path="docs"><span
+                lang="zh">文档</span><span
+                lang="en">Docs</span><span
+                lang="ja">ドキュメント</span><span
+                lang="ko">문서</span></a>
+        <a id="nav-updates" data-path="updates"><span
+                lang="zh">更新</span><span
+                lang="en">Updates</span><span
+                lang="ja">更新</span><span
+                lang="ko">업데이트</span></a>
+        <a id="nav-support" data-path="support"><span
+                lang="zh">支持与赞助</span><span
+                lang="en">Support/Sponsor</span><span
+                lang="ja">サポートと寄付</span><span
+                lang="ko">지원 및 기부</span></a>
+        <a id="nav-faq" data-path="faq">FAQ</a>
     </div>
 
-    <a href="#/">EN</a>
-    <a href="#/zh-cn/">中文</a>
+    <div class="nav-translation--wrapper">
+        <a id="nav-translation" class="nav-icon-link nav-translations">
+            <img src="img/translation.svg" width="22" height="22" alt="translations">
+        </a>
+        <div class="nav-translations--menu">
+            <ul>
+                <li><a id="translation-zh" lang="zh">简体中文</a></li>
+                <li><a id="translation-en" lang="en">English</a></li>
+                <li><a id="translation-jp" lang="ja">日本語</a></li>
+                <li><a id="translation-ko" lang="ko">한국어</a></li>
+            </ul>
+            <div class="nav-translations--item-help">
+                <a id="help-translate" href="https://github.com/YiiGuxing/TranslationPlugin/tree/pages-staging"
+                   target="_blank">👋
+                    <span lang="zh">帮助我们翻译！</span><span
+                            lang="en">Help Us Translate!</span><span
+                            lang="ja">翻訳にご協力ください！</span><span
+                            lang="ko">번역을 도와주세요!</span></a>
+            </div>
+        </div>
+    </div>
+
+    <a id="nav-github" class="nav-icon-link" href="https://github.com/YiiGuxing/TranslationPlugin" target="_blank">
+        <img src="img/github.svg" width="24" height="24" alt="github">
+    </a>
 </nav>
 <div id="app"></div>
 <script>
     function plugin(hook, vm) {
-        initPlugin(vm)
+        initPlugin(vm);
+
+        hook.doneEach(function () {
+            document.title = "TranslationPlugin ❤️ Yii.Guxing"
+            updateLanguage(vm);
+            updateNavBar(vm);
+            updateSidebar(vm);
+            updateGetStartedButton(vm);
+        });
 
         hook.mounted(function () {
-            initNav(vm);
+            initNavBar(vm);
         });
     }
 
     function initPlugin(vm) {
-        var updatesPathRegex = /^\/((en|ja|ko)\/)?updates(\/.*)?$/;
+        var pathRegex = /^\/((en|ja|ko)\/)?/;
         Object.defineProperty(vm.config, "loadSidebar", {
             get: function () {
-                return updatesPathRegex.test(vm.route.path) ? "_sidebar.md" : false;
+                var path = (vm.route.path || "").replace(pathRegex, "")
+                if (!path || path === "docs" || path.indexOf("updates/") === 0) {
+                    return "_sidebar.md"
+                } else if (path === "updates") {
+                    return "updates/_sidebar.md"
+                }
+                return false;
             }
         });
     }
 
-    function initNav(vm) {
+    function initNavBar(vm) {
+        initNavLinks(vm);
+        initNavTranslations(vm);
+
         var nav = document.querySelector(".app-nav");
         var cover = document.querySelector(".cover");
         if (nav && cover && typeof cover.after === "function") {
             cover.after(nav);
         }
+    }
 
-        initHomeLink(vm)
+    function initNavLinks(vm) {
+        initHomeLink(vm);
+
+        var navLinks = document.querySelectorAll(".app-nav a[data-path]");
+        for (var i = 0; i < navLinks.length; i++) {
+            navLinks[i].onclick = function () {
+                window.location.href = "#" + getLanguagePath(vm) + this.getAttribute("data-path");
+            }
+        }
     }
 
     function initHomeLink(vm) {
-        document.querySelector("#home").onclick = function () {
+        var homeLink = document.querySelector("#nav-home");
+        homeLink.onclick = function () {
+            window.location.href = "#" + getLanguagePath(vm)
             if (/^\/((en|ja|ko)\/)?$/.test(vm.route.path)) {
-                var cover = document.querySelector("section.cover.show");
-                if (cover) {
-                    cover.scrollIntoView({behavior: "smooth", block: "start"});
-                    return;
-                }
+                setTimeout(function () {
+                    document.scrollingElement.scrollTo({top: 0, behavior: "smooth"});
+                }, 0);
+            }
+        }
+        return homeLink;
+    }
+
+    function initNavTranslations(vm) {
+        var translationLink = document.querySelector("#nav-translation");
+        var menu = document.querySelector(".nav-translations--menu");
+        if (translationLink && menu) {
+            translationLink.onmousedown = function (e) {
+                e.stopPropagation();
+            };
+            translationLink.onclick = function (e) {
+                menu.classList.toggle("show");
             }
 
-            window.location.href = "#" + getLanguagePath(vm)
+            var helpTranslate = document.querySelector("#help-translate");
+            menu.onmousedown = function (e) {
+                e.stopPropagation();
+            };
+            menu.onclick = function (e) {
+                var isHelpTranslate = helpTranslate && helpTranslate.contains(e.target);
+                var isLanguageLink = !isHelpTranslate && e.target.tagName === "A";
+                if ((isHelpTranslate || isLanguageLink) && menu.classList.contains("show")) {
+                    menu.classList.remove("show");
+                }
+                if (isLanguageLink) {
+                    switchLanguage(vm, e.target.lang)
+                }
+            };
+            document.addEventListener("mousedown", function (e) {
+                if (menu.classList.contains("show")) {
+                    menu.classList.remove("show");
+                }
+            });
         }
+    }
+
+    function updateNavBar(vm) {
+        var navBar = document.querySelector("nav.app-nav");
+        if (!navBar) {
+            return;
+        }
+
+        var result = /^\/((en|ja|ko)\/)?(docs|updates|support|faq)/.exec(vm.route.path);
+        navBar.setAttribute("data-path", result ? result[3] || "" : "docs");
+    }
+
+    function updateSidebar(vm) {
+        var showSidebar = /^\/((en|ja|ko)\/)?(docs|updates(\/.*)?)?$/.test(vm.route.path)
+        document.querySelector("main").classList.toggle("hide-sidebar", !showSidebar);
+    }
+
+    function updateGetStartedButton(vm) {
+        if (["/", "/en/", "/ja/", "/ko/"].indexOf(vm.route.path) >= 0) {
+            var button = document.querySelector(".cover #get-started-button");
+            if (button) {
+                button.removeAttribute("href");
+                button.onclick = function () {
+                    window.location.href = "#" + getLanguagePath(vm) + "docs";
+                }
+            }
+        }
+    }
+
+    function updateLanguage(vm) {
+        var result = /^\/((en|ja|ko)\/)?(.*)/.exec(vm.route.path);
+        var lang = result && result[2] || "zh"
+        document.documentElement.setAttribute("lang", lang);
     }
 
     function getLanguagePath(vm) {
@@ -73,14 +200,52 @@
         return result && result[0] || "/"
     }
 
+    function switchLanguage(vm, newLanguage) {
+        if (newLanguage) {
+            var replacement = "/$4";
+            if (newLanguage !== "zh") {
+                replacement = "/" + newLanguage + replacement;
+            }
+            var newPath = vm.route.path.replace(/^(\/((en|ja|ko)\/)?)(.*)/, replacement);
+            var query = ""
+            for (const queryKey in vm.route.query) {
+                if (query) {
+                    query += "&"
+                }
+                query += queryKey + "=" + encodeURI(vm.route.query[queryKey] || "");
+            }
+            if (query) {
+                query = "?" + query;
+            }
+            window.location.href = "#" + newPath + query;
+        }
+    }
+
     window.$docsify = {
-        coverpage: true,
-        loadSidebar: true,
+        name: "TranslationPlugin",
+        loadSidebar: false,
         relativePath: true,
-        plugins: [plugin]
+        auto2top: true,
+        executeScript: true,
+        maxLevel: 3,
+        topMargin: 60,
+        plugins: [plugin],
+        coverpage: ['/', '/en/', '/ja/', '/ko/'],
+        fallbackLanguages: ['en', 'ja', 'ko'],
+        nameLink: {
+            '/en/': '#/en/',
+            '/ja/': '#/ja/',
+            '/ko/': '#/ko/',
+            '/': '#/',
+        },
+        alias: {
+            "((/(en|ja|ko))?)/docs": "$1/",
+            "((/(en|ja|ko))?)/updates(/?)": "$1/updates/v1.0",
+        }
     }
 </script>
 <!-- Docsify v4 -->
 <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
 </body>
 </html>
