@@ -94,7 +94,7 @@
         },
         {
           "type": "descriptionMatches",
-          "pattern": "^/:warning:_`\\[Auto Generated Report]-=[0-9A-F]{32}=-`_.+```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+?```/s"
+          "pattern": "/:warning:_`\\[Auto Generated Report]-=[0-9A-F]{32}=-`_.+```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+?```/s"
         }
       ]
     },
