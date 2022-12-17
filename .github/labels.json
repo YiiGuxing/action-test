@@ -82,19 +82,19 @@
         },
         {
           "type": "descriptionMatches",
-          "pattern": "/```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at cn\\.yiiguxing\\.plugin\\.translate\\.ui\\.settings\\.OptionsConfigurable\\$Companion\\.showSettingsDialog\\(OptionsConfigurable\\.kt:\\d+\\)/gms"
+          "pattern": "/```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at cn\\.yiiguxing\\.plugin\\.translate\\.ui\\.settings\\.OptionsConfigurable\\$Companion\\.showSettingsDialog\\(OptionsConfigurable\\.kt:\\d+\\)/ms"
         },
         {
           "type": "descriptionMatches",
-          "pattern": "/```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at com\\.intellij\\.openapi\\.actionSystem\\.ActionManager\\.getInstance\\(ActionManager\\.java:\\d+\\)/gms"
+          "pattern": "/```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at com\\.intellij\\.openapi\\.actionSystem\\.ActionManager\\.getInstance\\(ActionManager\\.java:\\d+\\)/ms"
         },
         {
           "type": "descriptionMatches",
-          "pattern": "/```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at com\\.intellij\\.util\\.SVGLoader\\.loadFromClassResource\\(SVGLoader\\.java:\\d+\\)/gms"
+          "pattern": "/```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at com\\.intellij\\.util\\.SVGLoader\\.loadFromClassResource\\(SVGLoader\\.java:\\d+\\)/ms"
         },
         {
           "type": "descriptionMatches",
-          "pattern": "/:warning:_`\\[Auto Generated Report]-=[0-9A-F]{32}=-`_.+## Stack Trace\\n```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+```/ms"
+          "pattern": "/:warning:_`\\[Auto Generated Report]-=[0-9A-F]{32}=-`_.+## Stack Trace\\n```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+?```/ms"
         }
       ]
     },
@@ -107,7 +107,7 @@
         },
         {
           "type": "descriptionMatches",
-          "pattern": "/```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at com\\.intellij\\.ide\\.plugins\\.DynamicPlugins\\.loadPlugin\\(DynamicPlugins\\.kt:\\d+\\)/gms"
+          "pattern": "/```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at com\\.intellij\\.ide\\.plugins\\.DynamicPlugins\\.loadPlugin\\(DynamicPlugins\\.kt:\\d+\\)/ms"
         }
       ]
     },
