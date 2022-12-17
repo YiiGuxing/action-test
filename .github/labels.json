@@ -86,15 +86,15 @@
         },
         {
           "type": "descriptionMatches",
-          "pattern": "/```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at com\\.intellij\\.openapi\\.actionSystem\\.ActionManager\\.getInstance\\(ActionManager\\.java:\\d+\\)/ms"
+          "pattern": "/```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at com\\.intellij\\.openapi\\.actionSystem\\.ActionManager\\.getInstance\\(ActionManager\\.java:\\d+\\)/s"
         },
         {
           "type": "descriptionMatches",
-          "pattern": "/```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at com\\.intellij\\.util\\.SVGLoader\\.loadFromClassResource\\(SVGLoader\\.java:\\d+\\)/ms"
+          "pattern": "/```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+at com\\.intellij\\.util\\.SVGLoader\\.loadFromClassResource\\(SVGLoader\\.java:\\d+\\)/s"
         },
         {
           "type": "descriptionMatches",
-          "pattern": "/:warning:_`\\[Auto Generated Report]-=[0-9A-F]{32}=-`_.+## Stack Trace.```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+?```/ms"
+          "pattern": "^/:warning:_`\\[Auto Generated Report]-=[0-9A-F]{32}=-`_.+## Stack Trace.```((?!at cn\\.yiiguxing\\.plugin\\.translate\\.).)+?```/s"
         }
       ]
     },
