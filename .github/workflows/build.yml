@@ -26,9 +26,9 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    outputs:
-      version: ${{ steps.properties.outputs.version }}
-      changelog: ${{ steps.properties.outputs.changelog }}
+#    outputs:
+#      version: ${{ steps.properties.outputs.version }}
+#      changelog: ${{ steps.properties.outputs.changelog }}
     steps:
 
       # Free GitHub Actions Environment Disk Space
@@ -75,4 +75,5 @@ jobs:
 #          echo 'changelog<<EOF' >> $GITHUB_OUTPUT
 #          echo "$CHANGELOG" >> $GITHUB_OUTPUT
 #          echo 'EOF' >> $GITHUB_OUTPUT
+          ./gradlew --version
           ./gradlew properties --console=plain -q --stacktrace --debug
