@@ -26,9 +26,6 @@ fun environment(key: String) = providers.environmentVariable(key)
 fun dateValue(pattern: String) = LocalDate.now(ZoneId.of("Asia/Shanghai")).format(DateTimeFormatter.ofPattern(pattern))
 
 
-println(properties("pluginMajorVersion").get())
-println(properties("pluginMajorVersion").getOrNull())
-
 val autoSnapshotVersionEnv = environment("AUTO_SNAPSHOT_VERSION").map(String::toBoolean).orElse(true)
 val snapshotVersionPart = properties("autoSnapshotVersion")
     .map(String::toBoolean)
@@ -37,6 +34,12 @@ val snapshotVersionPart = properties("autoSnapshotVersion")
         isAutoSnapshotVersion && autoSnapshotVersionEnv
     }
     .map { if (it) "SNAPSHOT.${dateValue("yyMMdd")}" else null }
+
+println(autoSnapshotVersionEnv.get())
+println(snapshotVersionPart.get())
+
+
+
 val preReleaseVersion = properties("pluginPreReleaseVersion")
     .map { it.takeIf(String::isNotBlank) }
     .orElse(snapshotVersionPart)
