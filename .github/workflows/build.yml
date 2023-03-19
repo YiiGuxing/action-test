@@ -62,7 +62,7 @@ jobs:
         shell: bash
         run: |
           ./gradlew --version
-          ./gradlew properties --console=plain -q --stacktrace --debug
+          ./gradlew properties --console=plain -q --stacktrace
 
           PROPERTIES="$(./gradlew properties --console=plain -q)"
           VERSION="$(echo "$PROPERTIES" | grep "^version:" | cut -f2- -d ' ')"

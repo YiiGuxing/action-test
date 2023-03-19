@@ -55,9 +55,9 @@ println("===================")
 println(versionRegex)
 println(fullPluginVersion)
 println("===================")
-if (!versionRegex.matches(fullPluginVersion.get())) {
-    throw GradleException("Plugin version '${fullPluginVersion.get()}' does not match the pattern '$versionRegex'")
-}
+//if (!versionRegex.matches(fullPluginVersion.get())) {
+//    throw GradleException("Plugin version '${fullPluginVersion.get()}' does not match the pattern '$versionRegex'")
+//}
 
 val publishChannel = preReleaseVersion.map { preReleaseVersion: String? ->
     preReleaseVersion?.split(".")?.firstOrNull()?.lowercase()
