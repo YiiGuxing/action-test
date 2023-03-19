@@ -35,16 +35,9 @@ val snapshotVersionPart = properties("autoSnapshotVersion")
     }
     .map { if (it) "SNAPSHOT.${dateValue("yyMMdd")}" else null }
 
-println(environment("AUTO_SNAPSHOT_VERSION").map(String::toBoolean).orElse(true).get())
-println(properties("autoSnapshotVersion")
-    .map(String::toBoolean)
-    .orElse(false)
-    .zip(environment("AUTO_SNAPSHOT_VERSION").map(String::toBoolean).orElse(true)) { isAutoSnapshotVersion, autoSnapshotVersionEnv ->
-        isAutoSnapshotVersion && autoSnapshotVersionEnv
-    }
-        .map { if (it) "SNAPSHOT.${dateValue("yyMMdd")}" else null }.get())
-println(autoSnapshotVersionEnv.get())
-println(snapshotVersionPart.get())
+
+println(autoSnapshotVersionEnv.getOrNull())
+println(snapshotVersionPart.getOrNull())
 
 
 
