@@ -36,7 +36,7 @@ val snapshotVersionPart = properties("autoSnapshotVersion")
     .map { if (it) "SNAPSHOT.${dateValue("yyMMdd")}" else null }
 
 
-println(autoSnapshotVersionEnv.getOrNull())
+println(autoSnapshotVersionEnv.get())
 println(snapshotVersionPart.getOrNull())
 
 
