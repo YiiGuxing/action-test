@@ -74,7 +74,7 @@
         },
         {
           "type": "titleMatches",
-          "pattern": "find: An invalid record was encountered\\. \\(-67701\\)"
+          "pattern": "find: An invalid record was encountered\\. \\(-\\d+\\)"
         },
         {
           "type": "descriptionMatches",
