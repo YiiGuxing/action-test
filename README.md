@@ -1,6 +1,5 @@
-# test
+<p align="center">
 
-111
+  ![IMG](https://yiiguxing.github.io/TranslationPlugin/img/ext/screenshots.gif)
 
-
-11
+</p>
